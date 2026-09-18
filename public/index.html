@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="VMIIT Computer Center - Computer Education and Digital Skill Development"
+    >
+
+    <title>VMIIT Computer Center</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <a
+            href="/"
+            class="logo"
+        >
+
+            <span class="logo-mark">
+                VI
+            </span>
+
+            <span>
+                VMIIT
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a
+                href="/"
+                class="active"
+            >
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a
+                href="/login"
+                class="login-btn"
+            >
+                Admin Login
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<main>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+
+        <span class="hero-label">
+            VMIIT COMPUTER CENTER
+        </span>
+
+
+        <h1>
+            Learn Today.
+            Build Your Future.
+        </h1>
+
+
+        <p>
+            Computer education and digital skill
+            development designed to help students
+            build practical knowledge and confidence
+            for the digital world.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#courses"
+                class="btn btn-yellow"
+            >
+                Explore Courses
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-outline"
+            >
+                Contact Us
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    id="about"
+    class="about-section"
+>
+
+    <div class="section-container">
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+
+                <span class="section-label">
+                    ABOUT VMIIT
+                </span>
+
+
+                <h2>
+                    Practical Computer Education
+                    for Everyone
+                </h2>
+
+
+                <p>
+                    VMIIT Computer Center focuses on
+                    computer education, digital skills
+                    and practical learning.
+                </p>
+
+
+                <p>
+                    Our goal is to provide students with
+                    useful computer knowledge that can
+                    support their education, career and
+                    everyday digital needs.
+                </p>
+
+
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Practical Learning
+                            </h4>
+
+                            <p>
+                                Learn through practical
+                                computer skills.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Digital Skills
+                            </h4>
+
+                            <p>
+                                Develop useful digital
+                                knowledge.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Career Focus
+                            </h4>
+
+                            <p>
+                                Build skills for future
+                                opportunities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Student Friendly
+                            </h4>
+
+                            <p>
+                                Simple and accessible
+                                learning.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="about-card">
+
+
+                <div class="card-pattern"></div>
+
+
+                <div class="computer-icon">
+                    💻
+                </div>
+
+
+                <span>
+                    COMPUTER EDUCATION
+                </span>
+
+
+                <h3>
+                    VMIIT
+                </h3>
+
+
+                <p>
+                    Learn computer skills and develop
+                    your digital knowledge.
+                </p>
+
+
+                <a
+                    href="#courses"
+                    class="card-link"
+                >
+                    View Courses →
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     COURSES
+========================================= -->
+
+<section
+    id="courses"
+    class="courses-section"
+>
+
+    <div class="section-container">
+
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                OUR COURSES
+            </span>
+
+            <h2>
+                Explore Our Courses
+            </h2>
+
+            <p>
+                Choose from our available computer
+                education and skill development courses.
+            </p>
+
+        </div>
+
+
+
+        <!--
+            COURSES FROM MONGODB
+            JavaScript will insert cards here
+        -->
+
+        <div
+            id="courseList"
+            class="courses-grid"
+        >
+
+            <div class="course-loading">
+                Loading courses...
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta-section">
+
+    <div class="cta-container">
+
+
+        <div>
+
+            <span class="section-label">
+                START LEARNING
+            </span>
+
+            <h2>
+                Ready to build your computer skills?
+            </h2>
+
+        </div>
+
+
+        <a
+            href="tel:7838987091"
+            class="btn btn-yellow"
+        >
+            Call 7838987091
+        </a>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer id="contact">
+
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <div class="logo footer-logo">
+
+                <span class="logo-mark">
+                    VI
+                </span>
+
+                <span>
+                    VMIIT
+                </span>
+
+            </div>
+
+
+            <p>
+                Computer education and digital
+                skill development.
+            </p>
+
+        </div>
+
+
+
+        <!-- LINKS -->
+
+        <div class="footer-links">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="/login">
+                Admin Login
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-contact">
+
+            <h4>
+                Contact
+            </h4>
+
+            <p>
+                VMIIT Computer Center
+            </p>
+
+            <p>
+                Computer Education & Training
+            </p>
+
+
+            <a
+                href="tel:7838987091"
+                class="contact-number"
+            >
+                📞 7838987091
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2016 VMIIT Computer Center.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   LOAD COURSES
+========================================= */
+
+async function loadCourses() {
+
+
+    const courseList =
+        document.getElementById(
+            "courseList"
+        );
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/api/courses"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                "Failed to load courses"
+            );
+
+        }
+
+
+        const courses =
+            data.courses || [];
+
+
+
+        if (courses.length === 0) {
+
+            courseList.innerHTML = `
+
+                <div class="no-courses">
+
+                    <h3>
+                        Courses Coming Soon
+                    </h3>
+
+                    <p>
+                        Our courses will be
+                        available here soon.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+
+        courseList.innerHTML =
+            courses
+                .map(
+                    (course, index) => {
+
+                        const image =
+                            course.image
+                                ? `
+                                    <img
+                                        src="${escapeHtml(course.image)}"
+                                        alt="${escapeHtml(course.title)}"
+                                        class="course-image"
+                                        onerror="this.style.display='none';"
+                                    >
+                                  `
+                                : `
+                                    <div class="course-no-image">
+                                        💻
+                                    </div>
+                                  `;
+
+
+                        return `
+
+                            <article
+                                class="dynamic-course-card"
+                            >
+
+
+                                ${image}
+
+
+                                <div
+                                    class="dynamic-course-content"
+                                >
+
+
+                                    <span
+                                        class="course-number"
+                                    >
+                                        ${String(
+                                            index + 1
+                                        ).padStart(2, "0")}
+                                    </span>
+
+
+                                    <h3>
+                                        ${escapeHtml(
+                                            course.title
+                                        )}
+                                    </h3>
+
+
+                                    <p>
+                                        ${escapeHtml(
+                                            course.description
+                                        )}
+                                    </p>
+
+
+                                    <div
+                                        class="course-meta"
+                                    >
+
+                                        <span>
+                                            <strong>
+                                                Duration:
+                                            </strong>
+
+                                            ${escapeHtml(
+                                                course.duration ||
+                                                "Contact us"
+                                            )}
+                                        </span>
+
+
+                                        <span
+                                            class="course-fee"
+                                        >
+                                            ₹${Number(
+                                                course.fee || 0
+                                            ).toLocaleString("en-IN")}
+                                        </span>
+
+                                    </div>
+
+
+                                    <a
+                                        href="tel:7838987091"
+                                        class="enquire-button"
+                                    >
+                                        Enquire Now
+                                    </a>
+
+
+                                </div>
+
+
+                            </article>
+
+                        `;
+
+                    }
+                )
+                .join("");
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Course loading error:",
+            error
+        );
+
+
+        courseList.innerHTML = `
+
+            <div class="course-error">
+
+                <h3>
+                    Unable to load courses
+                </h3>
+
+                <p>
+                    Please try again later.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =========================================
+   HTML ESCAPE
+========================================= */
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+
+/* =========================================
+   START
+========================================= */
+
+loadCourses();
+
+
+</script>
+
+
+</body>
+
+</html>

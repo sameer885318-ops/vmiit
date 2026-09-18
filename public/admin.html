@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VMIIT Admin Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 22px;
+        }
+
+        .logout {
+            background: #dc2626;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .logout:hover {
+            background: #b91c1c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 11px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+
+            padding: 11px 18px;
+            border-radius: 6px;
+
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .cancel {
+            background: #6b7280;
+            margin-left: 8px;
+        }
+
+        .cancel:hover {
+            background: #4b5563;
+        }
+
+        .course {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .course h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .course p {
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+
+        .edit {
+            background: #f59e0b;
+            color: white;
+
+            border: none;
+            padding: 8px 14px;
+
+            border-radius: 5px;
+            cursor: pointer;
+
+            margin-right: 5px;
+        }
+
+        .edit:hover {
+            background: #d97706;
+        }
+
+        .delete {
+            background: #dc2626;
+            color: white;
+
+            border: none;
+            padding: 8px 14px;
+
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete:hover {
+            background: #b91c1c;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #16a34a;
+        }
+
+        .error {
+            color: #dc2626;
+        }
+
+        .empty {
+            color: #6b7280;
+            padding: 10px 0;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        VMIIT Admin Dashboard
+    </h1>
+
+    <button
+        class="logout"
+        onclick="logout()"
+    >
+        Logout
+    </button>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- ======================================
+         COURSE FORM
+    ======================================= -->
+
+    <div class="card">
+
+        <h2 id="formTitle">
+            Add Course
+        </h2>
+
+
+        <form id="courseForm">
+
+
+            <div class="form-group">
+
+                <label for="title">
+                    Course Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter course title"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    placeholder="Enter course description"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="duration">
+                    Duration
+                </label>
+
+                <input
+                    type="text"
+                    id="duration"
+                    placeholder="Example: 6 Months"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="fee">
+                    Fee
+                </label>
+
+                <input
+                    type="number"
+                    id="fee"
+                    min="0"
+                    placeholder="Enter course fee"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="image">
+                    Image URL
+                </label>
+
+                <input
+                    type="text"
+                    id="image"
+                    placeholder="Optional image URL"
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+                id="submitButton"
+            >
+                Add Course
+            </button>
+
+
+            <button
+                type="button"
+                class="btn cancel"
+                id="cancelButton"
+                onclick="cancelEdit()"
+                style="display: none;"
+            >
+                Cancel
+            </button>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- ======================================
+         COURSE LIST
+    ======================================= -->
+
+    <div class="card">
+
+        <h2>
+            All Courses
+        </h2>
+
+        <div id="courseList">
+            Loading courses...
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+    // ==========================================
+    // VARIABLES
+    // ==========================================
+
+    let editingCourseId = null;
+
+    const token =
+        localStorage.getItem("token");
+
+
+    // ==========================================
+    // LOGIN CHECK
+    // ==========================================
+
+    if (!token) {
+
+        window.location.href =
+            "/login";
+
+    }
+
+
+    // ==========================================
+    // LOAD COURSES
+    // ==========================================
+
+    async function loadCourses() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/courses"
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Failed to load courses"
+                );
+
+            }
+
+
+            const courseList =
+                document.getElementById(
+                    "courseList"
+                );
+
+
+            if (
+                !data.courses ||
+                data.courses.length === 0
+            ) {
+
+                courseList.innerHTML =
+                    `
+                    <div class="empty">
+                        No courses available.
+                    </div>
+                    `;
+
+                return;
+
+            }
+
+
+            courseList.innerHTML =
+                data.courses
+                    .map(course => `
+
+                        <div class="course">
+
+                            <h3>
+                                ${escapeHtml(
+                                    course.title
+                                )}
+                            </h3>
+
+                            <p>
+                                ${escapeHtml(
+                                    course.description
+                                )}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Duration:
+                                </strong>
+
+                                ${escapeHtml(
+                                    course.duration
+                                )}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Fee:
+                                </strong>
+
+                                ₹${course.fee}
+                            </p>
+
+                            ${
+                                course.image
+                                ?
+                                `
+                                <p>
+                                    <strong>
+                                        Image:
+                                    </strong>
+
+                                    ${escapeHtml(
+                                        course.image
+                                    )}
+                                </p>
+                                `
+                                :
+                                ""
+                            }
+
+
+                            <button
+                                class="edit"
+                                onclick="
+                                    editCourse(
+                                        '${course._id}'
+                                    )
+                                "
+                            >
+                                Edit
+                            </button>
+
+
+                            <button
+                                class="delete"
+                                onclick="
+                                    deleteCourse(
+                                        '${course._id}'
+                                    )
+                                "
+                            >
+                                Delete
+                            </button>
+
+                        </div>
+
+                    `)
+                    .join("");
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            document.getElementById(
+                "courseList"
+            ).innerHTML = `
+                <div class="error">
+                    ${escapeHtml(
+                        error.message
+                    )}
+                </div>
+            `;
+
+        }
+
+    }
+
+
+    // ==========================================
+    // ADD / UPDATE COURSE
+    // ==========================================
+
+    document
+        .getElementById("courseForm")
+        .addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const courseData = {
+
+                    title:
+                        document
+                            .getElementById(
+                                "title"
+                            )
+                            .value
+                            .trim(),
+
+                    description:
+                        document
+                            .getElementById(
+                                "description"
+                            )
+                            .value
+                            .trim(),
+
+                    duration:
+                        document
+                            .getElementById(
+                                "duration"
+                            )
+                            .value
+                            .trim(),
+
+                    fee:
+                        Number(
+                            document
+                                .getElementById(
+                                    "fee"
+                                )
+                                .value
+                        ),
+
+                    image:
+                        document
+                            .getElementById(
+                                "image"
+                            )
+                            .value
+                            .trim()
+
+                };
+
+
+                try {
+
+                    let url =
+                        "/api/courses";
+
+                    let method =
+                        "POST";
+
+
+                    if (editingCourseId) {
+
+                        url =
+                            `/api/courses/${editingCourseId}`;
+
+                        method =
+                            "PUT";
+
+                    }
+
+
+                    const response =
+                        await fetch(
+                            url,
+                            {
+
+                                method,
+
+                                headers: {
+
+                                    "Content-Type":
+                                        "application/json",
+
+                                    "Authorization":
+                                        `Bearer ${token}`
+
+                                },
+
+                                body:
+                                    JSON.stringify(
+                                        courseData
+                                    )
+
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            data.message ||
+                            "Operation failed"
+                        );
+
+                    }
+
+
+                    showMessage(
+                        data.message,
+                        "success"
+                    );
+
+
+                    resetForm();
+
+                    await loadCourses();
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    showMessage(
+                        error.message,
+                        "error"
+                    );
+
+                }
+
+            }
+        );
+
+
+    // ==========================================
+    // EDIT COURSE
+    // ==========================================
+
+    async function editCourse(id) {
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/courses"
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Failed to get courses"
+                );
+
+            }
+
+
+            const course =
+                data.courses.find(
+                    item =>
+                        item._id === id
+                );
+
+
+            if (!course) {
+
+                alert(
+                    "Course not found"
+                );
+
+                return;
+
+            }
+
+
+            editingCourseId =
+                id;
+
+
+            document.getElementById(
+                "formTitle"
+            ).textContent =
+                "Edit Course";
+
+
+            document.getElementById(
+                "submitButton"
+            ).textContent =
+                "Update Course";
+
+
+            document.getElementById(
+                "cancelButton"
+            ).style.display =
+                "inline-block";
+
+
+            document.getElementById(
+                "title"
+            ).value =
+                course.title;
+
+
+            document.getElementById(
+                "description"
+            ).value =
+                course.description;
+
+
+            document.getElementById(
+                "duration"
+            ).value =
+                course.duration;
+
+
+            document.getElementById(
+                "fee"
+            ).value =
+                course.fee;
+
+
+            document.getElementById(
+                "image"
+            ).value =
+                course.image || "";
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                error.message
+            );
+
+        }
+
+    }
+
+
+    // ==========================================
+    // DELETE COURSE
+    // ==========================================
+
+    async function deleteCourse(id) {
+
+        const confirmed =
+            confirm(
+                "Are you sure you want to delete this course?"
+            );
+
+
+        if (!confirmed) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    `/api/courses/${id}`,
+                    {
+
+                        method: "DELETE",
+
+                        headers: {
+
+                            "Authorization":
+                                `Bearer ${token}`
+
+                        }
+
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Failed to delete course"
+                );
+
+            }
+
+
+            showMessage(
+                data.message,
+                "success"
+            );
+
+
+            await loadCourses();
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            showMessage(
+                error.message,
+                "error"
+            );
+
+        }
+
+    }
+
+
+    // ==========================================
+    // CANCEL EDIT
+    // ==========================================
+
+    function cancelEdit() {
+
+        resetForm();
+
+    }
+
+
+    // ==========================================
+    // RESET FORM
+    // ==========================================
+
+    function resetForm() {
+
+        editingCourseId =
+            null;
+
+
+        document
+            .getElementById(
+                "courseForm"
+            )
+            .reset();
+
+
+        document.getElementById(
+            "formTitle"
+        ).textContent =
+            "Add Course";
+
+
+        document.getElementById(
+            "submitButton"
+        ).textContent =
+            "Add Course";
+
+
+        document.getElementById(
+            "cancelButton"
+        ).style.display =
+            "none";
+
+    }
+
+
+    // ==========================================
+    // MESSAGE
+    // ==========================================
+
+    function showMessage(
+        message,
+        type
+    ) {
+
+        const element =
+            document.getElementById(
+                "message"
+            );
+
+
+        element.textContent =
+            message;
+
+
+        element.className =
+            `message ${type}`;
+
+
+        setTimeout(
+            () => {
+
+                element.textContent =
+                    "";
+
+            },
+            3000
+        );
+
+    }
+
+
+    // ==========================================
+    // LOGOUT
+    // ==========================================
+
+    function logout() {
+
+        localStorage.removeItem(
+            "token"
+        );
+
+
+        window.location.href =
+            "/login";
+
+    }
+
+
+    // ==========================================
+    // HTML ESCAPE
+    // ==========================================
+
+    function escapeHtml(value) {
+
+        return String(value)
+
+            .replaceAll(
+                "&",
+                "&amp;"
+            )
+
+            .replaceAll(
+                "<",
+                "&lt;"
+            )
+
+            .replaceAll(
+                ">",
+                "&gt;"
+            )
+
+            .replaceAll(
+                '"',
+                "&quot;"
+            )
+
+            .replaceAll(
+                "'",
+                "&#039;"
+            );
+
+    }
+
+
+    // ==========================================
+    // START
+    // ==========================================
+
+    loadCourses();
+
+
+</script>
+
+
+</body>
+
+</html>
